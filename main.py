@@ -1,4 +1,5 @@
 import yaml
+import pdb
 import cgi
 import wsgiref.handlers
 from google.appengine.ext import (
@@ -7,6 +8,9 @@ from google.appengine.ext import (
 from gdata.analytics.client import (
     AnalyticsClient, ProfileQuery
 )
+
+from google.appengine.api import urlfetch
+urlfetch.set_default_fetch_deadline(600)
 
 class GoogleAccount(db.Model):
     email = db.StringProperty(required=True)
