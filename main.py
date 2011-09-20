@@ -9,7 +9,7 @@ from gdata.analytics.client import (
 )
 
 from google.appengine.api import urlfetch
-urlfetch.set_default_fetch_deadline(600)
+urlfetch.set_default_fetch_deadline(60)
 
 class GoogleAccount(db.Model):
     email = db.StringProperty(required=True)
